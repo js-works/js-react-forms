@@ -8,7 +8,8 @@ import { defineComponent } from 'js-react-utils'
 type Props = {
   value?: string,
   labelText?: string,
-  errorText?: string
+  errorText?: string,
+  grow?: number
 }
 
 type Injections = {
@@ -21,10 +22,11 @@ const styles: Styles = {
   container: {
     display: 'flex',
     flexDirection: 'column',
+    border: '1px solid red'
   },
 
   input: {
-
+    display: 'block'
   }
 }
 
@@ -44,6 +46,11 @@ export default defineComponent<Props, Injections>({
 
     errorText: {
       type: String,
+      optional: true
+    },
+
+    grow: {
+      type: Number,
       optional: true
     }
   },
@@ -75,13 +82,13 @@ export default defineComponent<Props, Injections>({
         input =
           <input id={id}
             className="jrf-text-field__input"
-            style={styles.input}
+            style={{...styles.input, flexGrow: this.props.grow}}
            />
 
       return (
-        <div className="jrf-text-field" style={styles.container}>
+        <div className="jrf-text-field" style={styles.container }>
           { label && <div>{label}</div> }
-          <div>{input}</div>
+          {input}
         </div>
       )
     }
