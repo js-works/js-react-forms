@@ -137,11 +137,17 @@ function renderSections(sections: any) {
 function renderSection(section: any) {
   const
     title = section.props.title || null,
-    header = title ? <div>{title}</div> : null
+    
+    header =
+      title
+        ? <div className="jrf-data-form__section-title">
+            {title}
+          </div>
+        : null
 
   return (
-    <div data-component="jrf:DataForm.Section">
-      { title }
+    <div data-component="jrf:DataForm.Section" className="jrf-data-form__section">
+      { header }
       <div>
         {
           React.Children.map(section.props.children, fields => {
@@ -155,7 +161,7 @@ function renderSection(section: any) {
 
 function renderFields(fields: any) {
   return (
-    <div data-component="jrf:DataForm.Section">
+    <div data-component="jrf:DataForm.Fields">
       {
         React.Children.map(fields.props.children, field => {
           return field

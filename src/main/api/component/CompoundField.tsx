@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
-import { defineComponent, withChildren } from 'js-react-utils'
+import { defineComponent, isElement, withChildren } from 'js-react-utils'
+import { Spec } from 'js-spec'
 
 type Props = {
   children: ReactNode
@@ -7,6 +8,13 @@ type Props = {
 
 export default defineComponent({
   displayName: 'jrf:CompoundField',
+
+  properties: {
+    children: {
+      optional: true,
+      validate: withChildren(Spec.all(isElement))
+    }
+  },
 
   render(props: Props) {
     return (

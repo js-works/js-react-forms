@@ -1,0 +1,39 @@
+/* --- TextField ------------------------------------------------- */
+
+.jrf-text-field {
+
+}
+
+.jrf-text-field__label {
+  font-size: 12px;
+  margin: 6px 0 2px 0;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.jrf-text-field__input {
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 1px;
+  
+  padding: 4px 7px;
+  margin: 0;
+  outline: none;
+}
+
+/* --- DataForm -------------------------------------------------- */
+
+.jrf-data-form__section {
+  padding: 0 0 8px 7px;
+  margin: 5px 5px 10px 5px;
+}
+
+.jrf-data-form__section-title {
+  height: 20px;
+  margin: 0 0 0 -7px;
+  padding: 0 0 4px 0;
+  font-size: 13px;
+  color: #666;
+ }

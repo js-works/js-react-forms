@@ -67,10 +67,16 @@ export default defineComponent<Props, Injections>({
 
         label =
           hasLabel
-            ? <label htmlFor={id}>{this.props.labelText}</label>
+            ? <label htmlFor={id} className="jrf-text-field__label">
+                {this.props.labelText}
+              </label>
             : null,
 
-        input = <input id={id} style={styles.input}/>
+        input =
+          <input id={id}
+            className="jrf-text-field__input"
+            style={styles.input}
+           />
 
       return (
         <div className="jrf-text-field" style={styles.container}>
